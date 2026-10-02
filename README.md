@@ -14,13 +14,35 @@ Because validation uses the same parser the browser ships, it is an honest check
 
 A dot-matrix tractor-feed printout: sprocket-hole side strips, green-bar striping, and a dot-matrix status line that reads valid or invalid.
 
+## Use
+
+1. Paste JSON into the Input box. It is validated as you type.
+2. Pick an indent (2 spaces, 4 spaces or tab) and click Format to pretty-print, or click Minify to strip all whitespace.
+3. If the JSON is invalid, read the parser error shown instead of output, fix the spot it names, and try again.
+4. Click Copy to copy the result.
+
+## Why this exists
+
+Pasting JSON into an online formatter can mean handing a stranger an API response full of internal data. This one is a single HTML file that uses the browser's own `JSON.parse`, so it accepts exactly what your JavaScript accepts. It has no tracking, makes no network calls, and is MIT licensed so you can keep a copy.
+
 ## Privacy
 
 Everything runs in your browser. Nothing you type is sent anywhere, stored, or saved. Closing the tab clears it.
 
-## Use it
+## Run locally
 
 Open `index.html` in any modern browser, or host it as a static page. No build step, no dependencies, no network calls.
+
+```
+git clone https://github.com/0xelitesystem/json-formatter-and-validator
+cd json-formatter-and-validator
+```
+
+Then open `index.html`, or serve the folder with `python -m http.server` and visit http://localhost:8000.
+
+## Build
+
+No build step. The whole tool is one `index.html` with inline CSS and JavaScript and no dependencies.
 
 ## More
 
